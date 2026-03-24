@@ -1,0 +1,380 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cream: #F5E9D7;
+    --deep-brown: #4A2C2A;
+    --antique-gold: #C9A24B;
+    --dark-green: #2F3E2F;
+    --off-white: #FDFAF4;
+    --shadow-gold: rgba(201, 162, 75, 0.15);
+}
+
+body {
+    font-family: 'Lora', serif;
+    line-height: 1.7;
+    color: var(--deep-brown);
+    background: var(--cream);
+    overflow-x: hidden;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(245, 233, 215, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h2 {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--deep-brown);
+    font-size: 1.8rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--deep-brown);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--antique-gold);
+}
+
+.cart-icon {
+    position: relative;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--antique-gold);
+    color: var(--deep-brown);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(74, 44, 42, 0.7), rgba(74, 44, 42, 0.7)),
+                url('assets/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 0 2rem;
+    animation: fadeInUp 1s ease;
+}
+
+.hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.gold {
+    color: var(--antique-gold);
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--antique-gold);
+    color: var(--deep-brown);
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    box-shadow: 0 10px 30px var(--shadow-gold);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px var(--shadow-gold);
+}
+
+/* Sections */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: var(--deep-brown);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--antique-gold);
+}
+
+/* Featured Paintings */
+.featured {
+    padding: 8rem 0;
+    background: var(--off-white);
+}
+
+.paintings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.painting-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.painting-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.15);
+}
+
+.painting-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.painting-card:hover img {
+    transform: scale(1.05);
+}
+
+.painting-info {
+    padding: 2rem;
+}
+
+.painting-info h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--antique-gold);
+    margin-bottom: 1.5rem;
+}
+
+.add-cart {
+    width: 100%;
+    background: var(--antique-gold);
+    color: var(--deep-brown);
+    border: none;
+    padding: 1rem;
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-cart:hover {
+    background: var(--deep-brown);
+    color: white;
+}
+
+/* Artist Story */
+.artist-story {
+    padding: 8rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.story-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--deep-brown);
+}
+
+.cta-outline {
+    display: inline-block;
+    color: var(--antique-gold);
+    border: 2px solid var(--antique-gold);
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+}
+
+.cta-outline:hover {
+    background: var(--antique-gold);
+    color: var(--deep-brown);
+}
+
+.artist-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+    background: var(--deep-brown);
+    color: white;
+    padding: 4rem 0 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer-brand h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.footer-links a {
+    display: block;
+    color: var(--cream);
+    text-decoration: none;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--antique-gold);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: var(--cream);
+}
+
+/* WhatsApp Float */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background: #25D366;
+    color: white;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeInUp 1s ease;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    
+    .nav-menu {
+        display: none;
+    }
+    
+    .artist-story {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .paintings-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+}
